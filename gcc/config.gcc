@@ -963,6 +963,12 @@ case ${target} in
   esac
   target_has_targetdm=yes
   ;;
+*-*-toaru*)
+  gas=yes
+  gnu_ld=yes
+  default_use_cxa_atexit=yes
+  use_gcc_stdint=wrap
+  ;;
 *-*-*vms*)
   extra_options="${extra_options} vms/vms.opt"
   xmake_file=vms/x-vms
@@ -1908,6 +1914,12 @@ x86_64-*-rdos*)
     tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h newlib-stdint.h i386/i386elf.h i386/x86-64.h i386/rdos.h i386/rdos64.h"
     tmake_file="i386/t-i386elf t-svr4"
     ;;
+i[34567]86-*-toaru)
+	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h glibc-stdint.h i386/i386elf.h toaru.h"
+	;;
+x86_64-*-toaru*)
+	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h glibc-stdint.h i386/i386elf.h i386/x86-64.h toaru.h"
+	;;
 i[34567]86-*-dragonfly*)
 	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h dragonfly.h dragonfly-stdint.h i386/dragonfly.h"
 	tmake_file="${tmake_file} i386/t-crtstuff"
