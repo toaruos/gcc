@@ -968,6 +968,8 @@ case ${target} in
   gnu_ld=yes
   default_use_cxa_atexit=yes
   use_gcc_stdint=wrap
+  tmake_file="${tmake-file} t-slibgcc"
+  extra_options="${extra_options} rpath.opt toaru.opt"
   ;;
 *-*-*vms*)
   extra_options="${extra_options} vms/vms.opt"

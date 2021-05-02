@@ -887,12 +887,12 @@ x86_64-*-mingw*)
 	fi
 	;;
 i[34567]87-*-toaru*)
-	extra_parts="$extra_parts crti.o crtbegin.o crtend.o crtn.o"
-	tmake_file="$tmake_file i386/t-crtstuff t-crtstuff-pic t-libgcc-pic"
+	extra_parts="$extra_parts crti.o crtbegin.o crtbeginS.o crtend.o crtendS.o crtn.o"
+	tmake_file="$tmake_file i386/t-crtstuff t-crtstuff-pic t-slibgcc t-libgcc-pic"
 	;;
 x86_64-*-toaru*)
-	extra_parts="$extra_parts crti.o crtbegin.o crtend.o crtn.o"
-	tmake_file="$tmake_file i386/t-crtstuff t-crtstuff-pic t-libgcc-pic"
+	extra_parts="$extra_parts crti.o crtbegin.o crtbeginS.o crtend.o crtendS.o crtn.o"
+	tmake_file="$tmake_file i386/t-crtstuff t-crtstuff-pic t-slibgcc t-libgcc-pic"
 	;;
 ia64*-*-elf*)
 	extra_parts="$extra_parts crtbeginS.o crtendS.o crtfastmath.o"

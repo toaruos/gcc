@@ -6934,6 +6934,10 @@ sysv4 | sysv4.3*)
   esac
   ;;
 
+toaru*)
+  lt_cv_deplibs_check_method=pass_all
+  ;;
+
 tpf*)
   lt_cv_deplibs_check_method=pass_all
   ;;
@@ -11587,6 +11591,16 @@ sysv5* | sco3.2v5* | sco5v6* | unixware* | OpenUNIX* | sysv4*uw2*)
   sys_lib_dlsearch_path_spec='/usr/lib'
   ;;
 
+toaru*)
+  version_type=linux
+  need_lib_prefix=no
+  need_version=no
+  library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}$major $libname${shared_ext}'
+  soname_spec='${libname}${release}${shared_ext}$major'
+  shlibpath_var=LD_LIBRARY_PATH
+  shlibpath_overrides_runpath=yes
+  ;;
+
 tpf*)
   # TPF is a cross-target only.  Preferred cross-host = GNU/Linux.
   version_type=linux
@@ -15274,6 +15288,16 @@ sysv5* | sco3.2v5* | sco5v6* | unixware* | OpenUNIX* | sysv4*uw2*)
     esac
   fi
   sys_lib_dlsearch_path_spec='/usr/lib'
+  ;;
+
+toaru*)
+  version_type=linux
+  need_lib_prefix=no
+  need_version=no
+  library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}$major $libname${shared_ext}'
+  soname_spec='${libname}${release}${shared_ext}$major'
+  shlibpath_var=LD_LIBRARY_PATH
+  shlibpath_overrides_runpath=yes
   ;;
 
 tpf*)
@@ -47835,7 +47859,7 @@ $as_echo "#define HAVE_TLS 1" >>confdefs.h
 	;;
     esac
     ;;
-  *-linux* | *-uclinux* | *-gnu* | *-kfreebsd*-gnu | *-cygwin* | *-solaris*)
+  *-linux* | *-uclinux* | *-gnu* | *-kfreebsd*-gnu | *-cygwin* | *-solaris* | *-toaru*)
 
   # All these tests are for C++; save the language and the compiler flags.
   # The CXXFLAGS thing is suspicious, but based on similar bits previously
