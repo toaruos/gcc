@@ -1071,7 +1071,7 @@ case ${target} in
 esac
 
 case ${target} in
-aarch64*-*-elf | aarch64*-*-fuchsia* | aarch64*-*-rtems*)
+aarch64*-*-elf | aarch64*-*-fuchsia* | aarch64*-*-rtems* | aarch64*-*-toaru*)
 	tm_file="${tm_file} dbxelf.h elfos.h newlib-stdint.h"
 	tm_file="${tm_file} aarch64/aarch64-elf.h aarch64/aarch64-errata.h aarch64/aarch64-elf-raw.h"
 	tmake_file="${tmake_file} aarch64/t-aarch64"
@@ -1082,6 +1082,9 @@ aarch64*-*-elf | aarch64*-*-fuchsia* | aarch64*-*-rtems*)
         aarch64-*-fuchsia*)
                 tm_file="${tm_file} fuchsia.h"
                 ;;
+	aarch64-*-toaru*)
+		tm_file="${tm_file} toaru.h"
+		;;
 	aarch64-*-rtems*)
 	  	tm_file="${tm_file} rtems.h aarch64/rtems.h"
 		;;

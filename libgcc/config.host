@@ -311,6 +311,10 @@ case ${host} in
     extra_parts="$extra_parts vtv_start.o vtv_end.o vtv_start_preinit.o vtv_end_preinit.o"
   fi
   ;;
+*-*-toaru)
+  tmake_file="$tmake_file t-crtstuff-pic t-libgcc-pic t-slibgcc"
+  extra_parts="crti.o crtbegin.o crtbeginS.o crtend.o crtendS.o crtn.o"
+  ;;
 *-*-uclinux*)
   extra_parts="crtbegin.o crtend.o"
   ;;
@@ -396,6 +400,13 @@ aarch64*-*-vxworks7*)
 	extra_parts="$extra_parts crtfastmath.o"
 	md_unwind_header=aarch64/aarch64-unwind.h
 	tmake_file="${tmake_file} ${cpu_type}/t-aarch64"
+	tmake_file="${tmake_file} ${cpu_type}/t-softfp t-softfp t-crtfm"
+	;;
+aarch64*-*-toaru*)
+	extra_parts="$extra_parts crtfastmath.o"
+	md_unwind_header=aarch64/aarch64-unwind.h
+	tmake_file="${tmake_file} ${cpu_type}/t-aarch64"
+	tmake_file="${tmake_file} ${cpu_type}/t-lse t-slibgcc-libgcc"
 	tmake_file="${tmake_file} ${cpu_type}/t-softfp t-softfp t-crtfm"
 	;;
 alpha*-*-linux*)
