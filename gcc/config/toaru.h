@@ -17,7 +17,7 @@
 
 /* There is no -lpthread, libc has pthreads by default. */
 #undef LIB_SPEC
-#define LIB_SPEC "%{pthread:} %{!shared:%{!symbolic:-lc}}"
+#define LIB_SPEC "%{pthread:} -lc"
 
 /* Support -rdynamic, -shared, -symbolic, set dynamic linker path */
 #undef LINK_SPEC
